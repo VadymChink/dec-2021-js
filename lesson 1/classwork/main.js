@@ -10,7 +10,7 @@
 
     let book ={
         name :'1984',
-        quantity : '328',
+        quantity : 328,
         genre : 'novel'
     };
     console.log(book);
@@ -20,7 +20,7 @@
 
     let book1 ={
         name :'1984',
-        numberOfPages : '328',
+        numberOfPages : 328,
         genre : 'novel',
         Author:'George Orwell'
    };
@@ -32,19 +32,19 @@
     let bookList = [
         {
             name :'1984',
-            numberOfPages : '328',
+            numberOfPages : 328,
             genre : 'novel',
             Author:'George Orwell'
         },
         {
             name :'Fahrenheit 451',
-            numberOfPages : '249',
+            numberOfPages : 249,
             genre : 'novel',
             Author:'Ray Bradbury'
         },
         {
             name :'Catch-22',
-            numberOfPages : '544',
+            numberOfPages : 544,
             genre : 'novel',
             Author:'Joseph Heller'
         }
@@ -67,8 +67,9 @@
 
     let heightC = 10;
     let dC = 4;
+    let rC= dC / 2;
     let PI = 3.141;
-    let v = PI * heightC * dC;
+    let v = PI * heightC * rC**2;
     console.log(v);
 
     //7. У прямокутного трикутника дві сторони n (зі значенням 3) та m (зі значенням 4).
