@@ -1,0 +1,43 @@
+body{
+    margin: 0;
+}
+.wrap{
+    width: 800px;
+    margin: 0 auto;
+}
+.wrapper{
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-evenly ;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    background: #f3f3f3;
+    text-align: center;
+}
+.card{
+    width: 350px;
+}
+p{
+    width: 300px;
+    margin: 10px;
+    overflow: hidden;
+    height: 125px;
+    text-align: justify;
+}
+h2{
+
+}
+img {
+    height: 500px;
+}
+.product-card{
+    width: 350px;
+    margin: 10px;
+}
+.product-title{
+    color: crimson;
+}
+.product-image{
+    width: 250px;
+    height: 300px;
+}
