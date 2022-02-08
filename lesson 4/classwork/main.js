@@ -81,9 +81,20 @@ arithmeticMean(array);
 // - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше
 // (Math використовувати заборонено);
 function anyNumber(...arr) {
-    console.log(arr)
+    let min = arr[0];
+    let max = arr[0];
+    for (let arrElement of arr) {
+        if (arrElement > max){
+            max = arrElement;
+        }
+        if (arrElement < min ){
+            min = arrElement;
+        }
+    }
+    console.log("max", max);
+        return  min
 }
-anyNumber(1,3,5,7);
+anyNumber(1,3,5,7,10);
 // - створити функцію яка заповнює масив рандомними числами
 // (цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100))
 // та виводить його.
