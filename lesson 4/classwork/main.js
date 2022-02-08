@@ -98,9 +98,9 @@ anyNumber(1,3,5,7,10);
 // - створити функцію яка заповнює масив рандомними числами
 // (цей код генерує рандомні числа в діапазоні від 0 до 100 - Math.round(Math.random()*100))
 // та виводить його.
-function arrRandom() {
+function arrRandom(a) {
     let array = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < a; i++) {
         let arrayElement = Math.round(Math.random()*100);
         array.push(arrayElement);
 
@@ -108,21 +108,21 @@ function arrRandom() {
         console.log(array)
     return array;
 }
-arrRandom();
+arrRandom(10);
 
 // - створити функцію яка заповнює масив рандомними числами в діапазоні від 0 до limit. limit - аргумент,
 // який характеризує кінцеве значення діапазону.
-function arrRandomAr(limit) {
+function arrRandomAr(a, limit) {
     let array = [];
-    for (let i = 0; i < limit; i++) {
-        let arrayElement = Math.round(Math.random()*100);
+    for (let i = 0; i < a; i++) {
+        let arrayElement = Math.round(Math.random()*limit);
         array.push(arrayElement);
 
     }
     console.log(array)
     return array;
 }
-arrRandomAr(10);
+arrRandomAr(10,100) ;
 //- Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
 console.log(array)
 function arrayBack(arr) {
