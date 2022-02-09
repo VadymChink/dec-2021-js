@@ -72,8 +72,9 @@ sum(array);
 function arithmeticMean(arr) {
     let result = 0;
     for (let arrElement of arr) {
-        result += arrElement / arr.length
+        result += arrElement
     }
+    result/= arr.length
     console.log(result);
     return result;
 }
