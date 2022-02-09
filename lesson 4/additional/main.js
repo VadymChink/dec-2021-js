@@ -62,3 +62,14 @@ function arrayObjectValue(arr) {
     console.log(array6);
 }
 arrayObjectValue(array4);
+
+function arrayObjectValue2(arr) {
+    let array7 = [];
+    for (let arrElement of arr) {
+        for (let array5Key in arrElement) {
+            array7.push(arrElement[array5Key]);
+        }
+    }
+    console.log(array7);
+}
+arrayObjectValue2(array4);
