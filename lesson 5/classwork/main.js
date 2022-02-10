@@ -95,9 +95,11 @@ let randomNumberArrayLimit = (n, limit) =>{
 randomNumberArrayLimit(7, 20)
 // - Функція приймає масив та робить з нього новий масив в зворотньому порядку. [1,2,3] -> [3, 2, 1].
 let array4= [1,2,3]
-let newArray = (arr) =>{
-    console.log(arr);
-    arr.reverse();
-    console.log(arr);
+let newArrayReverse = (arr) => {
+    let newArray = [];
+    for (let i = 0, j = arr.length-1; i <arr.length ; i++, j--) {
+        newArray[j] = arr[i];
+    }
+    console.log(newArray);
 }
-newArray(array4);
+newArrayReverse(array4);
