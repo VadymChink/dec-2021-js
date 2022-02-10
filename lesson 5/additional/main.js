@@ -37,6 +37,8 @@ foo([9,8,0,4], 2) // ==> [ 9, 8, 4, 0 ]
 
 // - Створити функцію яка буде переносити елементи з значенням 0 у кінець масиву.
 // Зберігаючи при цьому порядок не нульових значень.Довжина масиву від 2 до 100
+
+// Варіант 1
 let arrZeroBack = (arr) => {
     let array10 =[];
     for (let arrElement of arr) {
@@ -50,12 +52,32 @@ let arrZeroBack = (arr) => {
         }
     console.log(array10);
 }
+// EXAMPLE:
+let array11 = [1,0,6,0,3] //=> [1,6,3,0,0]
+let array22 = [0,1,2,3,4] //=> [1,2,3,4,0]
+let array33 = [0,0,1,0]   //=> [1,0,0,0]
+arrZeroBack(array11);
+arrZeroBack(array22);
+arrZeroBack(array33);
 
 
+// Варіант 2
+let arrZeroBack2 = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 0 ){
+           let index = arr.indexOf(arr[i]);
+            arr.splice(index, 1);
+            arr.push(0);
+        }
+    }
+    console.log(arr)
+}
 // EXAMPLE:
 let array1 = [1,0,6,0,3] //=> [1,6,3,0,0]
 let array2 = [0,1,2,3,4] //=> [1,2,3,4,0]
 let array3 = [0,0,1,0]   //=> [1,0,0,0]
-arrZeroBack(array1);
-arrZeroBack(array2);
-arrZeroBack(array3);
+let array4 = [0,2,3,5,0,0,1,0]   //=> [1,0,0,0]
+arrZeroBack2(array1);
+arrZeroBack2(array2);
+arrZeroBack2(array3);
+arrZeroBack2(array4);
