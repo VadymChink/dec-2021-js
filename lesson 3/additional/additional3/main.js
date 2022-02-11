@@ -129,6 +129,7 @@ for (let users of usersWithId) {
         }
     }
 }
+// newArrayId = usersWithId; - якщо ''push'' без то так
 console.log(newArrayId);
 
 //   Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
