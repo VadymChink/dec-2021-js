@@ -121,59 +121,16 @@ let citiesWithId = [
     {user_id: 4, country: 'USA', city: 'Miami'}
 ];
 let newArrayId = [];
-let ind1;
-for (let arElement of citiesWithId) {
-    for (let Key in arElement) {
-        if (arElement[Key] === 1){
-            ind1 = arElement;
-        }
-    }
-}
-let ind2;
-for (let arElement of citiesWithId) {
-    for (let Key in arElement) {
-        if (arElement[Key] === 2){
-            ind2 = arElement;
-        }
-    }
-}
-let ind3;
-for (let arElement of citiesWithId) {
-    for (let Key in arElement) {
-        if (arElement[Key] === 3){
-            ind3= arElement;
-        }
-    }
-}
-let ind4;
-for (let arElement of citiesWithId) {
-    for (let Key in arElement) {
-        if (arElement[Key] === 4){
-            ind4 = arElement;
-        }
-    }
-}
-for (let usersWithIdElement of usersWithId) {
-    for (let usersWithIdElementKey in usersWithIdElement) {
-    if (usersWithIdElement[usersWithIdElementKey] === 1){
-        usersWithIdElement.address = ind1
-        newArrayId.push(usersWithIdElement);
-        }
-    if (usersWithIdElement[usersWithIdElementKey] === 2){
-        usersWithIdElement.address = ind2
-        newArrayId.push(usersWithIdElement);
-        }
-    if (usersWithIdElement[usersWithIdElementKey] === 3){
-        usersWithIdElement.address = ind3
-        newArrayId.push(usersWithIdElement);
-        }
-    if (usersWithIdElement[usersWithIdElementKey] === 4){
-        usersWithIdElement.address = ind4
-        newArrayId.push(usersWithIdElement);
+for (let users of usersWithId) {
+    for (let cities of citiesWithId) {
+        if (users.id === cities.user_id) {
+            users.address = cities;
+            newArrayId.push(users);
         }
     }
 }
 console.log(newArrayId);
+
 //   Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
 let array6 = [23,14,51,32,12,693,512,945,134,621];
 for (let number of array6) {
