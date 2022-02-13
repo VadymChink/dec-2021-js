@@ -26,10 +26,7 @@ let cLowerCase = c.toLowerCase();
 console.log(cLowerCase);
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 let str = ' dirty string   ';
-let strClean = str.replace(' ', '')
-    .replace(" ", "-")
-    .replaceAll(' ', "")
-    .replace('-', ' ')
+let strClean = str.trim()
 console.log(strClean);
 
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
