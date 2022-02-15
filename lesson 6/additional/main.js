@@ -1,16 +1,18 @@
 
 // - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
 // document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
+
 let cutString = (str, n) =>{
-    let newArray = [];
-    let a = str.substring(0, n);
-    let b = str.substring(n, n+3);
-    let c = str.substring(n+3, n+6);
-    let d = str.substring(n+6, n+9);
-    newArray.push(a,b,c,d);
-    console.log(newArray);
+    let element = [];
+    for (let i = 0; i < str.length;) {
+        console.log(str.length)
+        element.push(str.substring(0, n));
+        str = str.slice(n);
+    }
+    console.log(element);
+    return element;
 }
-cutString('наслаждение' ,3)
+cutString('наслаждение' ,3);
 // document.writeln(cutString('наслаждение',3));
 
 // - Створити функцію-валідатор для адрес електронної пошти. Перевірка повинна включати в себе:
@@ -113,12 +115,12 @@ console.log(sort);
 let symb = 'о';
 let str = "Астрономия это наука о небесных объектах";
 let count = (str, stringSearch) =>{
-    let Search
+    let search
     let index = str.indexOf(stringSearch);
         if (str[index] === stringSearch){
-            Search = str.indexOf(stringSearch) + 1;
+            search = str.indexOf(stringSearch) + 1;
         }
-    return Search;
+    return search;
 }
 console.log(count(str, symb));
 document.writeln(count(str, symb));
@@ -132,3 +134,5 @@ let  cutString2 = (str, n) =>{
     return  newString;
 }
 document.writeln(cutString2(str2, 5)) // 'Сила тяжести приложена к центру'
+
+
