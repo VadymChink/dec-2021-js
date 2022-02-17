@@ -75,7 +75,7 @@ class Car2 {
             this.year = newValue;
         }
         this.addDriver = function (driver){
-            this.driver = driver
+            this.driver = driver;
         }
     }
 }
