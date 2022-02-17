@@ -3,14 +3,12 @@
 // document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
 
 let cutString = (str, n) =>{
-    let element = [];
-    for (let i = 0; i < str.length;) {
-        console.log(str.length)
-        element.push(str.substring(0, n));
-        str = str.slice(n);
-    }
-    console.log(element);
-    return element;
+   let array = [];
+   while (str.length){
+       array.push(str.substring(0,n));
+       str = str.slice(n);
+   }
+    console.log(array);
 }
 cutString('наслаждение' ,3);
 // document.writeln(cutString('наслаждение',3));
