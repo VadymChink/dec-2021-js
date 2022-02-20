@@ -57,17 +57,14 @@ for (let byClassNameElement of byClassName) {
 let elementsByClassName = document.getElementsByClassName('sub-header');
 let colors = prompt('enter color')
 for (let elementsByClassNameElement of elementsByClassName) {
-    console.log(elementsByClassNameElement)
     if (elementsByClassNameElement.innerText === 'content 2 segment'){
         elementsByClassNameElement.style.background = colors;
     }
 }
 // k) отримує елемент з класом content_1 та заміняє в ньому тест на довільний. Текст отримати з prompt()
 let classContent1 = document.getElementsByClassName('content_1');
-    let innerText = prompt('enter text');
-for (let classContent1Element of classContent1) {
-    classContent1Element.innerHTML = `<p>${innerText}</p>`;
-}
+classContent1[0].innerHTML = `<p>${prompt('enter text')}</p>`;
+
 // l) отримати елементи p та змінити їм padding на 20px
 let elementsByTagName = document.getElementsByTagName('p');
 for (let elementsByTagNameElement of elementsByTagName) {
