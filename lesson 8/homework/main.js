@@ -37,29 +37,3 @@ let red = document.getElementsByClassName('fc_rules');
 for (let redElement of red) {
     redElement.style.background = 'red';
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
