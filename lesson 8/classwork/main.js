@@ -48,7 +48,7 @@ for (let tagNameElement of tagName) {
 
 // i) отримує всі елементи 'sub-header' та змінює колір фону. Фон отримати з prompt()
 let byClassName = document.getElementsByClassName('sub-header');
-    let prompts = prompt('enter color');
+let prompts = prompt('enter color');
 for (let byClassNameElement of byClassName) {
     byClassNameElement.style.background = prompts
 }
