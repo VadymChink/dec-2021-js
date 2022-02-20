@@ -75,6 +75,4 @@ for (let elementsByTagNameElement of elementsByTagName) {
 }
 // m) отримати елементи з класом text2 та змінити їм текст на назву групи (mon-year. Пример sep-2021)
 let elementsByClassName2 = document.getElementsByClassName('text2');
-for (let elementsByClassNameElement of elementsByClassName2) {
-    elementsByClassNameElement.innerText = 'dec-2021';
-}
+elementsByClassName2[0].innerText = prompt('enter text');
