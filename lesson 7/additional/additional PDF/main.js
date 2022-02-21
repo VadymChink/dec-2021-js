@@ -25,7 +25,6 @@ function userCard (number){
                 historyLogs: card.historyLogs,
                 key: card.key
             }
-
         },
         putCredits: function (cash) {
             logging('putCredits',cash);
@@ -42,7 +41,7 @@ function userCard (number){
             }
         },
         setTransactionLimit: function (limit) {
-           let setTransactionLimit = card.transactionLimit = limit;
+                 card.transactionLimit = limit;
             logging('setTransactionLimit',limit);
         },
         transferCredits: function (cash, cards) {
@@ -58,16 +57,38 @@ function userCard (number){
         }
     }
 }
-let card3 = userCard(3);
-console.log(card3.getCardOptions());
-card3.putCredits(150);
-console.log(card3.getCardOptions());
-card3.takeCredits(100);
-console.log(card3.getCardOptions());
-card3.setTransactionLimit(5000);
-console.log(card3.getCardOptions());
-let card1 = userCard(1);
+class UserAccount {
+    constructor(name) {
+        this.name = name;
+        this.cards = [];
+        this.addCard = function (n) {
+           let newCard = userCard(n);
+           this.cards.push(newCard);
+           return newCard;
+        }
+        this.getCardByKey = function (number) {
+            let element;
+                let arr = this.cards
+                for (let arrElement of arr) {
+                    if (arrElement.getCardOptions().key === number){
+                    element = arrElement;
+                }
+            }return element;
+        };
+    }
+}
+
+let user = new UserAccount('Bob');
+user.addCard(1);
+user.addCard(2);
+let card1 = user.getCardByKey(1);
+let card2 = user.getCardByKey(2);
+card1.putCredits(500)
+card1.setTransactionLimit(800);
+card1.transferCredits(200, card2);
+
+card2.takeCredits(50);
 console.log(card1.getCardOptions());
-card3.transferCredits(50,card1);
-console.log(card3.getCardOptions());
-console.log(card1.getCardOptions());
+console.log(card2.getCardOptions());
+console.log(user);
+
