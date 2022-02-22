@@ -240,14 +240,19 @@ for (let usersListElement of usersList) {
     document.body.style.display = 'flex'
     document.body.style.flexWrap = 'wrap'
     wrapper.style.margin = '10px'
+
     let id = document.createElement('div');
     id.innerText = usersListElement.id;
+
     let name = document.createElement('div');
     name.innerText = usersListElement.name
+
     let username = document.createElement('div');
-    username.innerText = usersListElement.username
+    username.innerText = usersListElement.username;
+
     let email = document.createElement('div');
-    email.innerText = usersListElement.email
+    email.innerText = usersListElement.email;
+
     let address = document.createElement('div');
     let street =document.createElement('div');
     street.innerText = usersListElement.address.street;
@@ -257,15 +262,19 @@ for (let usersListElement of usersList) {
     city.innerText = usersListElement.address.city;
     let zipcode =document.createElement('div');
     zipcode.innerText = usersListElement.address.zipcode;
+
     let geo =document.createElement('div');
     let lat = document.createElement('div');
     lat.innerText = usersListElement.address.geo.lat;
     let lng = document.createElement('div');
     lng.innerText = usersListElement.address.geo.lng;
+
     let phone = document.createElement('div');
     phone.innerText = usersListElement.phone;
+
     let website = document.createElement('div');
     website.innerHTML = `<a href="${usersListElement.website}">${usersListElement.website}</a>`;
+
     let company = document.createElement('div');
     let nameCompany = document.createElement('div');
     nameCompany.innerText = usersListElement.company.name;
@@ -273,7 +282,9 @@ for (let usersListElement of usersList) {
     catchPhrase.innerText = usersListElement.company.catchPhrase;
     let bs = document.createElement('div');
     bs.innerText = usersListElement.company.bs;
+
     let margin = document.createElement('br');
+
     document.body.append(wrapper);
     wrapper.append(id, name,username,email,address,phone, website, company,margin);
     address.append(street,suite,city, zipcode, geo);
