@@ -280,6 +280,3 @@ for (let usersListElement of usersList) {
     geo.append(lat,lng)
     company.append(nameCompany,catchPhrase,bs);
 }
-
-
-
