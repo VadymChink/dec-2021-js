@@ -235,59 +235,77 @@
 
 // Створити під кожен елемент окремий блок. В цьому блоці, під кожну властивість, та властивості
 // внутрішніх об'єктів створити свої окремі блок.
+// for (let usersListElement of usersList) {
+//     let wrapper = document.createElement('div');
+//     document.body.style.display = 'flex'
+//     document.body.style.flexWrap = 'wrap'
+//     wrapper.style.margin = '10px'
+//
+//     let id = document.createElement('div');
+//     id.innerText = usersListElement.id;
+//
+//     let name = document.createElement('div');
+//     name.innerText = usersListElement.name
+//
+//     let username = document.createElement('div');
+//     username.innerText = usersListElement.username;
+//
+//     let email = document.createElement('div');
+//     email.innerText = usersListElement.email;
+//
+//     let address = document.createElement('div');
+//     let street =document.createElement('div');
+//     street.innerText = usersListElement.address.street;
+//     let suite =document.createElement('div');
+//     suite.innerText = usersListElement.address.suite;
+//     let city =document.createElement('div');
+//     city.innerText = usersListElement.address.city;
+//     let zipcode =document.createElement('div');
+//     zipcode.innerText = usersListElement.address.zipcode;
+//
+//     let geo =document.createElement('div');
+//     let lat = document.createElement('div');
+//     lat.innerText = usersListElement.address.geo.lat;
+//     let lng = document.createElement('div');
+//     lng.innerText = usersListElement.address.geo.lng;
+//
+//     let phone = document.createElement('div');
+//     phone.innerText = usersListElement.phone;
+//
+//     let website = document.createElement('div');
+//     website.innerHTML = `<a href="${usersListElement.website}">${usersListElement.website}</a>`;
+//
+//     let company = document.createElement('div');
+//     let nameCompany = document.createElement('div');
+//     nameCompany.innerText = usersListElement.company.name;
+//     let catchPhrase = document.createElement('div');
+//     catchPhrase.innerText = usersListElement.company.catchPhrase;
+//     let bs = document.createElement('div');
+//     bs.innerText = usersListElement.company.bs;
+//
+//     let margin = document.createElement('br');
+//
+//     document.body.append(wrapper);
+//     wrapper.append(id, name,username,email,address,phone, website, company,margin);
+//     address.append(street,suite,city, zipcode, geo);
+//     geo.append(lat,lng)
+//     company.append(nameCompany,catchPhrase,bs);
+// }
+
+
 for (let usersListElement of usersList) {
-    let wrapper = document.createElement('div');
-    document.body.style.display = 'flex'
-    document.body.style.flexWrap = 'wrap'
-    wrapper.style.margin = '10px'
-
-    let id = document.createElement('div');
-    id.innerText = usersListElement.id;
-
-    let name = document.createElement('div');
-    name.innerText = usersListElement.name
-
-    let username = document.createElement('div');
-    username.innerText = usersListElement.username;
-
-    let email = document.createElement('div');
-    email.innerText = usersListElement.email;
-
-    let address = document.createElement('div');
-    let street =document.createElement('div');
-    street.innerText = usersListElement.address.street;
-    let suite =document.createElement('div');
-    suite.innerText = usersListElement.address.suite;
-    let city =document.createElement('div');
-    city.innerText = usersListElement.address.city;
-    let zipcode =document.createElement('div');
-    zipcode.innerText = usersListElement.address.zipcode;
-
-    let geo =document.createElement('div');
-    let lat = document.createElement('div');
-    lat.innerText = usersListElement.address.geo.lat;
-    let lng = document.createElement('div');
-    lng.innerText = usersListElement.address.geo.lng;
-
-    let phone = document.createElement('div');
-    phone.innerText = usersListElement.phone;
-
-    let website = document.createElement('div');
-    website.innerHTML = `<a href="${usersListElement.website}">${usersListElement.website}</a>`;
-
-    let company = document.createElement('div');
-    let nameCompany = document.createElement('div');
-    nameCompany.innerText = usersListElement.company.name;
-    let catchPhrase = document.createElement('div');
-    catchPhrase.innerText = usersListElement.company.catchPhrase;
-    let bs = document.createElement('div');
-    bs.innerText = usersListElement.company.bs;
-
-    let margin = document.createElement('br');
-
-    document.body.append(wrapper);
-    wrapper.append(id, name,username,email,address,phone, website, company,margin);
-    address.append(street,suite,city, zipcode, geo);
-    geo.append(lat,lng)
-    company.append(nameCompany,catchPhrase,bs);
+    function div(ele) {
+        for (let usersListElementKey in ele) {
+            if (typeof ele[usersListElementKey] !== 'object') {
+                let element = document.createElement('div');
+                element.append(ele[usersListElementKey]);
+                document.body.appendChild(element);
+                console.log(element)
+            }
+            else if (typeof ele[usersListElementKey] === 'object'){
+                div(ele[usersListElementKey]);
+            }
+        }
+    }
+    div(usersListElement);
 }
