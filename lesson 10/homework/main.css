@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+.btn{
+    height: 35px;
+    width: 60px;
+    border-radius: 50px;
+    background: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+.menu{
+    display: none;
+}
