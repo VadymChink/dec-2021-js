@@ -49,12 +49,37 @@ menu.onclick = () => menuList.classList.toggle('menu');
 // {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
 //     Вывести список комментариев в документ, каждый в своем блоке.
 //     Добавьте каждому комментарию по кнопке для сворачивания его body.
+let arr = [{title : 'lorem0', body:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae corporis neque nihil placeat ratione rerum sapiente totam! Alias, quae.'},
+    {title : 'lorem1', body:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae corporis neque nihil placeat ratione rerum sapiente totam! Alias, quae.'},
+    {title : 'lorem2', body:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae corporis neque nihil placeat ratione rerum sapiente totam! Alias, quae.'},
+    {title : 'lorem3', body:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae corporis neque nihil placeat ratione rerum sapiente totam! Alias, quae.'},
+    {title : 'lorem4', body:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae corporis neque nihil placeat ratione rerum sapiente totam! Alias, quae.'},
+    {title : 'lorem5', body:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae corporis neque nihil placeat ratione rerum sapiente totam! Alias, quae.'},
+    {title : 'lorem6', body:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae corporis neque nihil placeat ratione rerum sapiente totam! Alias, quae.'},
+    {title : 'lorem7', body:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae corporis neque nihil placeat ratione rerum sapiente totam! Alias, quae.'},
+    {title : 'lorem8', body:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae corporis neque nihil placeat ratione rerum sapiente totam! Alias, quae.'},
+    {title : 'lorem9', body:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque beatae corporis neque nihil placeat ratione rerum sapiente totam! Alias, quae.'}];
 
 
 
+for (let arrElement of arr) {
+let block = document.createElement('div');
+document.body.appendChild(block);
 
+let h2 = document.createElement('h2');
+h2.innerText = arrElement.title;
 
+let p = document.createElement('p');
+p.innerText = arrElement.body;
 
+block.append(h2,p);
+
+let buttonBody = document.createElement('button');
+buttonBody.innerText = 'button'
+block.append(buttonBody);
+
+buttonBody.onclick = () =>p.classList.toggle('click');
+}
 
 
 
