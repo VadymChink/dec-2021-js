@@ -80,6 +80,3 @@ block.append(buttonBody);
 
 buttonBody.onclick = () =>p.classList.toggle('click');
 }
-
-
-
