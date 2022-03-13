@@ -16,7 +16,7 @@ button1.innerText = 'click';
 document.body.appendChild(form1);
 form1.append(inputName, inputAge, button1);
 
-let Obj = (name, age) => {
+let obj = (name, age) => {
     let user = {
         name: name, age: age
     };
