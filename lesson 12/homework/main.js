@@ -40,7 +40,6 @@ fetch('https://jsonplaceholder.typicode.com/comments')
     .then(value => value.json())
     .then(comments => {
         for (let comment of comments) {
-            console.log(comment)
             let block = document.createElement('div');
             wr.appendChild(block);
 
