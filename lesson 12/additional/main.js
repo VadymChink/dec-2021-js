@@ -13,10 +13,11 @@ fetch('https://jsonplaceholder.typicode.com/users')
             let block = document.createElement('div');
             document.body.appendChild(block);
             block.innerHTML = `<h2>Id User: ${user.id}</h2><h3>${user.name}</h3> <h2>${user.username}</h2>`;
-            let btn = document.createElement('button');
-            btn.innerText = 'click';
-            block.appendChild(btn);
-            btn.onclick = function () {
+            let btnPosts = document.createElement('button');
+            btnPosts.innerText = 'posts';
+            block.appendChild(btnPosts);
+
+            btnPosts.onclick = function () {
                 fetch('https://jsonplaceholder.typicode.com/posts')
                     .then(value => value.json())
                     .then(posts => {
@@ -31,6 +32,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
                             let btnComment = document.createElement('button');
                             btnComment.innerText = 'comments';
                             div.appendChild(btnComment);
+
                             btnComment.onclick = function () {
                                 fetch('https://jsonplaceholder.typicode.com/comments')
                                     .then(value => value.json())
@@ -48,7 +50,7 @@ fetch('https://jsonplaceholder.typicode.com/users')
                             }
                         }
                     })
-                btn.disabled = true;
+                btnPosts.disabled = true;
 
             }
         }
