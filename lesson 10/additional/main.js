@@ -77,6 +77,7 @@ for (let user of usersWithAddress) {
     ch1.innerText = JSON.stringify(user);
     blockCh.append(ch1);
 }
+
 function remove() {
     let arr = document.getElementById('block').children;
     let byIdChildren = document.getElementById('block').children;
@@ -130,42 +131,27 @@ document.onclick = function () {
         }
     } else if (chbox1.checked) {
         remove();
-        if (chbox1.checked) {
-            let filter1 = usersWithAddress.filter(value => !value.status);
-            for (let user of filter1) {
-                let ch1 = document.createElement('div');
-                ch1.innerText = JSON.stringify(user);
-                blockCh.append(ch1);
-            }
-        }
-        if (!chbox1.checked) {
-            remove();
+        let filter1 = usersWithAddress.filter(value => !value.status);
+        for (let user of filter1) {
+            let ch1 = document.createElement('div');
+            ch1.innerText = JSON.stringify(user);
+            blockCh.append(ch1);
         }
     } else if (chbox2.checked) {
         remove();
-        if (chbox2.checked) {
-            let filter2 = usersWithAddress.filter(value => value.age > 29);
-            for (let user of filter2) {
-                let divElement = document.createElement('div');
-                divElement.innerText = JSON.stringify(user);
-                blockCh.appendChild(divElement);
-            }
-        }
-        if (!chbox2.checked) {
-            remove();
+        let filter2 = usersWithAddress.filter(value => value.age > 29);
+        for (let user of filter2) {
+            let divElement = document.createElement('div');
+            divElement.innerText = JSON.stringify(user);
+            blockCh.appendChild(divElement);
         }
     } else if (chbox3.checked) {
         remove();
         let filter3 = usersWithAddress.filter(value => value.address.city === 'Kyiv');
-        if (chbox3.checked) {
-            for (let user of filter3) {
-                let div = document.createElement('div');
-                div.innerText = JSON.stringify(user);
-                blockCh.appendChild(div);
-            }
-        }
-        if (!chbox3.checked) {
-            remove();
+        for (let user of filter3) {
+            let div = document.createElement('div');
+            div.innerText = JSON.stringify(user);
+            blockCh.appendChild(div);
         }
     } else {
         remove();
