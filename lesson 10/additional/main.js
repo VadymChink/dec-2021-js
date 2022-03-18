@@ -72,12 +72,6 @@ let chbox3 = document.getElementById('chbox3');
 
 let blockCh = document.getElementById('block');
 
-for (let user of usersWithAddress) {
-    let ch1 = document.createElement('div');
-    ch1.innerText = JSON.stringify(user);
-    blockCh.append(ch1);
-}
-
 function remove() {
     let arr = document.getElementById('block').children;
     let byIdChildren = document.getElementById('block').children;
@@ -88,78 +82,56 @@ function remove() {
     }
 }
 
+function user(filter) {
+    for (let user of filter) {
+        let div = document.createElement('div');
+        div.innerText = JSON.stringify(user);
+        blockCh.appendChild(div);
+    }
+}
+
+user(usersWithAddress);
+
 document.onclick = function () {
     if (chbox1.checked && chbox2.checked && !chbox3.checked) {
         remove();
         let filter = usersWithAddress.filter(value => {
             return value.status === false && value.age > 29;
         })
-        for (let user of filter) {
-            let div = document.createElement('div');
-            div.innerText = JSON.stringify(user);
-            blockCh.appendChild(div);
-        }
+        user(filter);
     } else if (chbox1.checked && chbox3.checked && !chbox2.checked) {
         remove();
         let filter = usersWithAddress.filter(value => {
             return value.status === false && value.address.city === 'Kyiv';
         })
-        for (let user of filter) {
-            let div = document.createElement('div');
-            div.innerText = JSON.stringify(user);
-            blockCh.appendChild(div);
-        }
+        user(filter);
     } else if (chbox2.checked && chbox3.checked && !chbox1.checked) {
         remove();
         let filter = usersWithAddress.filter(value => {
             return value.age > 29 && value.address.city === 'Kyiv';
         })
-        for (let user of filter) {
-            let div = document.createElement('div');
-            div.innerText = JSON.stringify(user);
-            blockCh.appendChild(div);
-        }
+        user(filter);
     } else if (chbox1.checked && chbox2.checked && chbox3.checked) {
         remove();
         let filter = usersWithAddress.filter(value => {
             return value.status === false && value.age > 29 && value.address.city === 'Kyiv';
         })
-        for (let user of filter) {
-            let div = document.createElement('div');
-            div.innerText = JSON.stringify(user);
-            blockCh.appendChild(div);
-        }
+        user(filter);
     } else if (chbox1.checked) {
         remove();
-        let filter1 = usersWithAddress.filter(value => !value.status);
-        for (let user of filter1) {
-            let ch1 = document.createElement('div');
-            ch1.innerText = JSON.stringify(user);
-            blockCh.append(ch1);
-        }
+        let filter = usersWithAddress.filter(value => !value.status);
+        user(filter);
     } else if (chbox2.checked) {
         remove();
-        let filter2 = usersWithAddress.filter(value => value.age > 29);
-        for (let user of filter2) {
-            let divElement = document.createElement('div');
-            divElement.innerText = JSON.stringify(user);
-            blockCh.appendChild(divElement);
-        }
+        let filter = usersWithAddress.filter(value => value.age > 29);
+        user(filter);
     } else if (chbox3.checked) {
         remove();
-        let filter3 = usersWithAddress.filter(value => value.address.city === 'Kyiv');
-        for (let user of filter3) {
-            let div = document.createElement('div');
-            div.innerText = JSON.stringify(user);
-            blockCh.appendChild(div);
-        }
+        let filter = usersWithAddress.filter(value => value.address.city === 'Kyiv');
+        user(filter);
     } else {
         remove();
-        for (let user of usersWithAddress) {
-            let ch1 = document.createElement('div');
-            ch1.innerText = JSON.stringify(user);
-            blockCh.append(ch1);
-        }
+        user(usersWithAddress);
     }
 }
 
