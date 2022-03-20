@@ -172,15 +172,6 @@
 //     })
 //
 
-function newPromise(point) {
-    return new Promise((resolve, reject) => {
-               setTimeout(() => {
-                    console.log(point);
-                    resolve();
-                },2000)
-            });
-}
-
 let point1 = 'Прокинусь'
 let point2 = 'Встати'
 let point3 = 'Ранкова гігієна'
@@ -198,41 +189,28 @@ let point14 = 'Вечірні гігієнічні процедури'
 let point15 = 'Фільм або серіальчик перед сном'
 let point16 = 'Заснути'
 
-new Promise((resolve) => {
-    setTimeout(() => {
-        console.log(point1);
-        resolve();
-    }, 1000)
-})
-    .then(() => {
-        return newPromise(point2)
-    })
-    .then(() => {
-        return newPromise(point3)
-    }).then(() => {
-        return newPromise(point4)
-    }).then(() => {
-        return newPromise(point5)
-    }).then(() => {
-        return newPromise(point6)
-    }).then(() => {
-        return newPromise(point7)
-    }).then(() => {
-        return newPromise(point8)
-    }).then(() => {
-        return newPromise(point9)
-    }).then(() => {
-        return newPromise(point10)
-    }).then(() => {
-        return newPromise(point11)
-    }).then(() => {
-        return newPromise(point12)
-    }).then(() => {
-        return newPromise(point13)
-    }).then(() => {
-        return newPromise(point14)
-    }).then(() => {
-        return newPromise(point15)
-    }).then(() => {
-        return newPromise(point16)
+function newPromise(point) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log(point);
+            resolve();
+        }, 2000)
     });
+}
+
+newPromise(point1)
+.then(() => newPromise(point2))
+.then(() => newPromise(point3))
+.then(() => newPromise(point4))
+.then(() => newPromise(point5))
+.then(() => newPromise(point6))
+.then(() => newPromise(point7))
+.then(() => newPromise(point8))
+.then(() => newPromise(point9))
+.then(() => newPromise(point10))
+.then(() => newPromise(point11))
+.then(() => newPromise(point12))
+.then(() => newPromise(point13))
+.then(() => newPromise(point14))
+.then(() => newPromise(point15))
+.then(() => newPromise(point16));
