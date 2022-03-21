@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		img{
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+<h1>list</h1>
+<button id="clear">Очистити кошик</button>
+<script>
+	let product = JSON.parse(localStorage.getItem('product'));
+	let wrap = document.createElement('div');
+	document.body.appendChild(wrap);
+
+	for (let i = 0; i < product.length; i++) {
+		let div = document.createElement('div');
+		div.innerHTML = `<h2>Назва товару: ${product[i].productName}</h2>
+<h3>Кількість: ${product[i].quantity}</h3>
+<h3>Ціна: ${product[i].price} </h3>
+<img src="${product[i].image}" alt="${product[i].productName}">`
+		wrap.appendChild(div);
+		let buttonElement = document.createElement('button');
+		buttonElement.innerText = 'видалити';
+		buttonElement.classList.add(`class${i}`);
+		div.appendChild(buttonElement);
+		buttonElement.onclick = function () {
+			wrap.removeChild(div)
+		}
+	}
+let clear = document.getElementById('clear');
+	clear.onclick = function () {
+		wrap.remove()
+		localStorage.clear()
+	}
+</script>
+</body>
+</html>
